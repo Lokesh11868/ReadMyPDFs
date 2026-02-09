@@ -22,16 +22,16 @@ The application follows a standard RAG (Retrieval-Augmented Generation) pipeline
 
 ```mermaid
 graph LR
-    A[Upload PDF] --> B[Extract Text]
-    B --> C[Split into Chunks]
-    C --> D[Generate Embeddings<br/>(HuggingFace)]
-    D --> E[Store in Vector DB<br/>(FAISS)]
+    A["Upload PDF"] --> B["Extract Text"]
+    B --> C["Split into Chunks"]
+    C --> D["Generate Embeddings<br/>(HuggingFace)"]
+    D --> E["Store in Vector DB<br/>(FAISS)"]
     
-    F[User Question] --> G[Embed Question]
-    G --> H[Retrieve Relevant<br/>Chunks]
+    F["User Question"] --> G["Embed Question"]
+    G --> H["Retrieve Relevant<br/>Chunks"]
     E -.-> H
-    H --> I[Send to LLM<br/>(Groq Llama 3)]
-    I --> J[Generate Answer]
+    H --> I["Send to LLM<br/>(Groq Llama 3)"]
+    I --> J["Generate Answer"]
 ```
 
 1.  **PDF Loading**: The app reads your uploaded PDF files and extracts the text.
